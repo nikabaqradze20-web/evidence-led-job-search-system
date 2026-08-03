@@ -27,18 +27,43 @@ In the private workflow, Gmail and job-platform access is provided through accou
 - Plain-file persistence that remains inspectable in Git and VS Code.
 
 ## Architecture
+flowchart TD
 
-```mermaid
-flowchart LR
-    S[Profile + evidence] --> V[Vacancy record]
-    V --> F[Fit evaluation]
-    F --> T{Human review}
-    T -->|approved| E[Evidence selection]
-    E --> C[Tailored CV]
-    E --> L[Cover letter]
-    F --> R[Tracker state]
-    V --> D[Discovery history]
-```
+    subgraph Sources[Vacancy sources through Claude connections]
+        A[Gmail job-alert emails]
+        B[Job-platform search results]
+    end
+
+    A --> C[Manually start vacancy discovery]
+    B --> C
+
+    C --> D[Extract and normalize vacancy information]
+    D --> E{Already recorded?}
+
+    E -->|Yes| F[Mark as already seen]
+    E -->|No| G[Create vacancy record]
+
+    G --> H[Compare requirements with candidate evidence]
+    P[Candidate profile and evidence library] --> H
+
+    H --> I[Produce fit evaluation and recommendation]
+    I --> J[Update tracker]
+    I --> K{Human decision}
+
+    K -->|Reject| L[Record rejection]
+    K -->|Approve| M[Select supporting evidence]
+
+    P --> M
+    M --> N[Tailor CV]
+    M --> O[Draft cover letter]
+
+    N --> Q{Human factual review}
+    O --> Q
+
+    Q -->|Revise| M
+    Q -->|Approve| R[Submit application manually]
+
+    R --> S[Update application status]
 
 The system separates facts from decisions:
 
