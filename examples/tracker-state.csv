@@ -1,0 +1,5 @@
+vacancy_id,company,job_title,status,recommendation,date_found,deadline,source_url,next_action,notes
+northstar_insights-analyst_2026-08-03,Northstar Insights,Insights Analyst,approved,apply — realistic stretch,2026-08-03,unknown,https://example.invalid/jobs/northstar-insights-analyst,prepare draft,synthetic example
+example-research-operations_2026-08-03,Example Research Co.,Research Operations Analyst,considering,consider,2026-08-03,unknown,https://example.invalid/jobs/example-research-operations,user review,synthetic example
+example-market-lab_research-analyst_2026-08-03,Example Market Lab,Research Analyst,rejected,reject,2026-08-03,unknown,https://example.invalid/redirect/synthetic-research-analyst,none,synthetic example; central requirement not evidenced
+future-example_insights-intern_2026-08-03,Future Example,Insights Intern,new,,2026-08-03,unknown,https://example.invalid/jobs/future-example,review,synthetic example; not yet evaluated

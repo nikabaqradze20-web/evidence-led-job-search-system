@@ -1,0 +1,17 @@
+From: synthetic-jobagent@example.invalid
+Subject: Synthetic alert: Research Analyst
+Date: 2026-08-03
+
+This is a synthetic single-posting fixture for the public portfolio.
+
+Good match
+
+Research Analyst
+Example Market Lab
+Hamburg / hybrid
+
+Read the full job description:
+https://example.invalid/redirect/synthetic-research-analyst
+
+The role supports survey design, data cleaning, and recurring insight reporting.
+

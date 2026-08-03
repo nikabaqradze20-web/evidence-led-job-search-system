@@ -1,0 +1,4 @@
+vacancy_id,company,job_title,status,recommendation,date_found,deadline,source_url,next_action,notes
+northstar-insights-insights-analyst_2026-08-03,Northstar Insights,Insights Analyst,new,,2026-08-03,unknown,https://example.invalid/jobs/northstar-insights-analyst,review,synthetic pipeline output
+example-research-co-research-operations-analyst_2026-08-03,Example Research Co.,Research Operations Analyst,new,,2026-08-03,unknown,https://example.invalid/jobs/example-research-operations,review,synthetic pipeline output
+example-market-lab-research-analyst_2026-08-03,Example Market Lab,Research Analyst,new,,2026-08-03,unknown,https://example.invalid/redirect/synthetic-research-analyst,review,synthetic pipeline output

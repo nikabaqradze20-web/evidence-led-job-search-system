@@ -1,0 +1,44 @@
+{
+  "run_id": "synthetic-demo",
+  "sources": {
+    "synthetic-alerts@example.invalid": {
+      "format": "digest",
+      "postings_found": 2
+    },
+    "synthetic-jobagent@example.invalid": {
+      "format": "single-posting",
+      "postings_found": 1
+    }
+  },
+  "postings": [
+    {
+      "title": "Insights Analyst",
+      "company": "Northstar Insights",
+      "location": "Germany (hybrid)",
+      "source": "synthetic-alerts@example.invalid",
+      "source_url": "https://example.invalid/jobs/northstar-insights-analyst",
+      "match_reason": "matched synthetic profile terms from the source alert"
+    },
+    {
+      "title": "Research Operations Analyst",
+      "company": "Example Research Co.",
+      "location": "Berlin (remote-friendly)",
+      "source": "synthetic-alerts@example.invalid",
+      "source_url": "https://example.invalid/jobs/example-research-operations",
+      "match_reason": "matched synthetic profile terms from the source alert"
+    },
+    {
+      "title": "Research Analyst",
+      "company": "Example Market Lab",
+      "location": "Hamburg / hybrid",
+      "source": "synthetic-jobagent@example.invalid",
+      "source_url": "https://example.invalid/redirect/synthetic-research-analyst",
+      "match_reason": "matched synthetic profile terms from the source alert"
+    }
+  ],
+  "deduplication": {
+    "within_run_duplicates": 0,
+    "already_seen": 0,
+    "kept": 3
+  }
+}

@@ -1,0 +1,22 @@
+From: synthetic-alerts@example.invalid
+Subject: Synthetic research jobs digest
+Date: 2026-08-03
+
+This is a synthetic email fixture for the public portfolio. It contains no real vacancy or employer data.
+
+------------------------------
+Insights Analyst
+Northstar Insights
+Germany (hybrid)
+View job: https://example.invalid/jobs/northstar-insights-analyst
+
+Support recurring market trackers, survey analysis, and concise client reports.
+
+------------------------------
+Research Operations Analyst
+Example Research Co.
+Berlin (remote-friendly)
+View job: https://example.invalid/jobs/example-research-operations
+
+Coordinate research inputs, document evidence, and support quality checks.
+

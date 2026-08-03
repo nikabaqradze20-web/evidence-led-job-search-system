@@ -1,0 +1,43 @@
+# Synthetic demonstration input. Not a real candidate profile.
+candidate_id: demo-candidate
+contact:
+  name: Demo Candidate
+  location: Germany
+target_roles:
+  - research analyst
+  - insights analyst
+  - data analyst
+professional_profile:
+  current_role: Research Associate
+  background:
+    - quantitative social research
+    - survey analysis
+    - applied reporting
+experience:
+  - organization: Applied Research Studio
+    position: Research Associate
+    period: 2024-present
+    evidence:
+      - survey analysis and regression modelling
+      - structured text annotation workflow for approximately 4,000 segments
+      - research reports for non-technical audiences
+  - organization: Policy Research Group
+    position: Researcher
+    period: 2021-2024
+    evidence:
+      - recurring monthly labour-market tracker
+      - questionnaire design, sampling, fieldwork, cleaning, analysis, reporting
+      - projects for international public-interest clients
+tools:
+  - R
+  - Python
+  - Stata
+claim_boundaries:
+  - claim: commercial account management
+    status: not directly evidenced
+  - claim: conjoint analysis
+    status: not run end to end
+availability:
+  notice_period: two weeks
+  preferred_start: 2026-10-01
+
