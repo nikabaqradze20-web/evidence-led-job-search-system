@@ -1,8 +1,20 @@
 # Evidence-Led Job Search System
 
-This folder is the public portfolio edition of a private, file-based job-search workflow. It demonstrates how prompt-driven research assistance can be made traceable, conservative, and reviewable without publishing personal data or live application history.
+This repository is the public portfolio edition of a private, evidence-led job-search workflow developed with Claude Code. It connects job-alert discovery, vacancy extraction, fit evaluation, tracking, and application-material tailoring while keeping all external actions under human control.
 
-All candidate, vacancy, employer, and application content in this folder is synthetic.
+All candidate, vacancy, employer, and application content in this repository is synthetic.
+
+## How it works
+
+1. When manually invoked, Claude searches connected Gmail job-alert emails and job platforms for new vacancies.
+2. Relevant vacancies are extracted and converted into structured records.
+3. Duplicate vacancies are identified and the tracker is updated.
+4. Each vacancy is evaluated against the candidate profile and evidence library.
+5. Suitable vacancies are presented for human review.
+6. After approval, the system selects supporting evidence and drafts a tailored CV and cover letter.
+7. The human reviews all claims and submits the application manually.
+
+In the private workflow, Gmail and job-platform access is provided through account-specific Claude connections. The public repository uses synthetic fixtures and contains no credentials or live application data.
 
 ## What it demonstrates
 
@@ -10,7 +22,7 @@ All candidate, vacancy, employer, and application content in this folder is synt
 - Normalized vacancy records with explicit uncertainty.
 - Requirement-by-requirement fit evaluation.
 - Evidence selection before drafting application materials.
-- Vacancy-specific CV and cover-letter workflows with claim boundaries.
+- Vacancy-specific CV and cover-letter workflows with explicit claim boundaries.
 - Human approval gates before external actions.
 - Plain-file persistence that remains inspectable in Git and VS Code.
 
