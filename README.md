@@ -27,37 +27,22 @@ In the private workflow, Gmail and job-platform access is provided through accou
 - Plain-file persistence that remains inspectable in Git and VS Code.
 
 ## Architecture
+
 ```mermaid
-flowchart TD
-    A[Gmail job-alert emails] --> C[Vacancy discovery]
-    B[Job-platform results] --> C
+flowchart LR
+    A[Gmail alerts and job-platform results]
+    B[Extract, normalize, and deduplicate]
+    C[Create vacancy record]
+    D[Evaluate fit against profile and evidence]
+    E{Human decision}
+    F[Select evidence and tailor CV and cover letter]
+    G{Human factual review}
+    H[Submit manually and update tracker]
 
-    C --> D[Extract and normalize vacancy]
-    D --> E{Duplicate?}
-
-    E -->|Yes| F[Mark as already seen]
-    E -->|No| G[Create vacancy record]
-
-    G --> H[Evaluate requirements against profile]
-    P[Candidate profile and evidence] --> H
-
-    H --> I[Fit recommendation]
-    I --> J{Human decision}
-
-    J -->|Reject| K[Record rejection]
-    J -->|Approve| L[Select evidence]
-
-    P --> L
-    L --> M[Tailor CV]
-    L --> N[Draft cover letter]
-
-    M --> O{Human factual review}
-    N --> O
-
-    O -->|Approve| Q[Submit application manually]
-    Q --> R[Update tracker]
+    A --> B --> C --> D --> E
+    E -->|Approve| F --> G -->|Approve| H
+    E -->|Reject| H
 ```
-
 ## Folder map
 
 | Path | Purpose |
