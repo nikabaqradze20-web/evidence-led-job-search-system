@@ -27,54 +27,36 @@ In the private workflow, Gmail and job-platform access is provided through accou
 - Plain-file persistence that remains inspectable in Git and VS Code.
 
 ## Architecture
+```mermaid
 flowchart TD
+    A[Gmail job-alert emails] --> C[Vacancy discovery]
+    B[Job-platform results] --> C
 
-    subgraph Sources[Vacancy sources through Claude connections]
-        A[Gmail job-alert emails]
-        B[Job-platform search results]
-    end
-
-    A --> C[Manually start vacancy discovery]
-    B --> C
-
-    C --> D[Extract and normalize vacancy information]
-    D --> E{Already recorded?}
+    C --> D[Extract and normalize vacancy]
+    D --> E{Duplicate?}
 
     E -->|Yes| F[Mark as already seen]
     E -->|No| G[Create vacancy record]
 
-    G --> H[Compare requirements with candidate evidence]
-    P[Candidate profile and evidence library] --> H
+    G --> H[Evaluate requirements against profile]
+    P[Candidate profile and evidence] --> H
 
-    H --> I[Produce fit evaluation and recommendation]
-    I --> J[Update tracker]
-    I --> K{Human decision}
+    H --> I[Fit recommendation]
+    I --> J{Human decision}
 
-    K -->|Reject| L[Record rejection]
-    K -->|Approve| M[Select supporting evidence]
+    J -->|Reject| K[Record rejection]
+    J -->|Approve| L[Select evidence]
 
-    P --> M
-    M --> N[Tailor CV]
-    M --> O[Draft cover letter]
+    P --> L
+    L --> M[Tailor CV]
+    L --> N[Draft cover letter]
 
-    N --> Q{Human factual review}
-    O --> Q
+    M --> O{Human factual review}
+    N --> O
 
-    Q -->|Revise| M
-    Q -->|Approve| R[Submit application manually]
-
-    R --> S[Update application status]
-
-The system separates facts from decisions:
-
-- `sample-data/profile.yaml` and `sample-data/evidence.md` are evidence inputs.
-- `sample-data/emails/` contains synthetic Gmail-like inputs for a digest and a single-posting alert.
-- `sample-data/vacancy.md` is the normalized job input.
-- `examples/extraction-output.json` records the synthetic extraction result.
-- `examples/fit-evaluation.md` records the comparison and recommendation.
-- `examples/evidence-selection.md` records what may be used downstream.
-- `examples/tailored-cv.md` is a derived artifact, not a new source of truth.
-- `examples/cover-letter.md` demonstrates contextual drafting after evidence selection.
+    O -->|Approve| Q[Submit application manually]
+    Q --> R[Update tracker]
+```
 
 ## Folder map
 
