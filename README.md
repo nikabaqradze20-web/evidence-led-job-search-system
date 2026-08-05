@@ -1,9 +1,75 @@
 # Evidence-Led Job Search System
 
-This repository is the public portfolio edition of a private, evidence-led job-search workflow developed with Claude Code. It connects job-alert discovery, vacancy extraction, fit evaluation, tracking, and application-material tailoring while keeping all external actions under human control.
+A human-controlled workflow for discovering vacancies, evaluating fit,
+selecting verified evidence, and producing tailored application materials.
 
-All candidate, vacancy, employer, and application content in this repository is synthetic.
+The system connects job-alert discovery, structured vacancy records,
+requirement-level evaluation, tracking, and CV and cover-letter drafting while
+keeping all decisions and external actions under human control.
 
+## Problem
+
+A serious job search creates several connected problems:
+
+- vacancies arrive through different platforms and email alerts;
+- the same vacancy may appear more than once;
+- requirements must be compared with evidence from several past roles and
+  projects;
+- application materials must be tailored without exaggerating experience;
+- decisions, deadlines, and application status must remain traceable.
+
+When these tasks are handled separately, information is easily lost. It also
+becomes difficult to distinguish direct experience from transferable skills or
+to verify that every statement in a tailored CV is supported by evidence.
+
+Generative AI can accelerate vacancy evaluation and drafting, but it can also
+produce unsupported claims, overstate partial matches, or make application
+decisions without sufficient human review.
+
+## Approach
+
+This project uses an evidence-first workflow.
+
+A structured profile and evidence library act as the source of truth. Each
+vacancy is converted into a normalized record and evaluated requirement by
+requirement before any application material is drafted.
+
+The workflow separates:
+
+1. vacancy discovery and extraction;
+2. deduplication and tracking;
+3. administrative and eligibility checks;
+4. requirement-level fit evaluation;
+5. human approval or rejection;
+6. evidence selection;
+7. tailored CV and cover-letter drafting;
+8. final factual review and manual submission.
+
+Missing evidence is reported rather than filled in. Direct experience is kept
+separate from transferable capability, and a recommendation to apply never
+counts as approval or submission.
+
+## Private and public versions
+
+The private workflow is manually invoked through Claude and uses connected
+Gmail job-alert emails and job platforms as discovery sources.
+
+The public repository is a portfolio-safe implementation. It replaces real
+vacancies, candidate information, email identifiers, and application materials
+with synthetic fixtures. It demonstrates the workflow, file contracts, local
+pipeline, tests, and privacy controls without publishing credentials or
+personal application data.
+
+## My contribution
+
+I designed the evidence model, vacancy-record structure, requirement-level
+evaluation process, human approval gates, tracking logic, and application
+tailoring workflow.
+
+I also defined the rules separating verified, partially verified, transferable,
+and unsupported claims. Claude Code assisted with implementation and execution,
+while the workflow architecture, evidence rules, evaluation criteria, and
+quality-control decisions were developed and reviewed by me.
 ## How it works
 
 1. When manually invoked, Claude searches connected Gmail job-alert emails and job platforms for new vacancies.
